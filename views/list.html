@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chat room</title>
+    
+    <style>
+      body{
+	     background-color: #C0C0C0;
+		 margin: 0px;
+		 padding: 0px;
+		 font-size: 12px;
+	  }
+	  div{
+	     display: block;
+	  }
+	  ul{
+	     margin: 0;
+		 padding: 0;
+		 display: block;
+		 list-style-type: none;
+		 -webkit-margin-before: 1em;
+		 -webkit-margin-after: 1em;
+		 -webkit-margin-start: 0px;
+		 -webkit-margin-end: 0px;
+		 -webkit-padding-start: 40px;
+	  }
+	  embed{
+	     width: 100;
+		 height: 100;
+		 allownetworking: internal;
+		 allowscriptaccess: never;
+		 quality: high;
+		 background-color: #FFFFFF;
+		 wmode: transparent;
+		 allowfullscreen: true;
+	  }
+	  #top{
+	     padding: 0px;
+		 border-bottom-width: 1px;
+		 border-bottom-style: solid;
+		 border-bottom-color: rgb(230,231,225);
+		 background-color: #DDDDDD;
+		 min-width: 960px;
+		 line-height: 28px;
+	  }
+	  .cl{
+	     zoom: 1;
+	  }
+	  .cl::after{
+	     content: ".";
+		 display: block;
+		 height: 0px;
+		 clear: both;
+		 visibility: hidden;
+	  }
+	  .z{
+	     float: left;
+	  }
+	  a{
+	     color: #069;
+	  }
+	  <!-- A{text-decoration:none} --> 
+	  .y{
+	     float: right;
+	  }
+	  
+	  #hd{
+	     margin-top: 30px;
+		 width: 950px;
+		 height: 392px;
+		 border-top-color: rgb(211, 223, 223);
+		 border-top-style: solid;
+		 border-top-width: 1px;
+		 border-right-color: rgb(211, 223, 223);
+		 border-right-style: solid;
+		 border-right-width: 1px;
+		 border-bottom-color: rgb(211, 223, 223);
+		 border-bottom-style: solid;
+		 border-bottom-width: 1px;
+		 border-left-color: rgb(211, 223, 223);
+		 border-left-style: solid;
+		 border-left-width: 1px;
+		 background-image: url(https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/11193338_991750967509395_65634180817094905_n.jpg?oh=12def3d06696215bc45cd0bdd9a2c32d&oe=55CD9047&__gda__=1440979204_ccb58120ca4540a1f7a018b2c86d4bd0);
+		 background-position-x: 100%;
+		 background-position-y: 0%;
+		 background-size: initial;
+		 background-repeat: no-repeat;
+		 background-attachment: initial;
+		 background-origin: initial;
+		 background-clip: initial;
+		 background-color: rgb(250, 250, 250);
+		 color: #069;
+		 position: relative;
+	  }
+	  #hd h2{
+	     padding-top: 20px;
+		 padding-right: 0px;
+		 padding-bottom: 0px;
+		 padding-left: 30px;
+		 line-height: 115%;
+		 font-size: 14px;
+		 float: left;
+	  }
+	  #hd h2 strong{
+	     display: block;
+	  }
+	  #hd h2 span{
+	     display: block;
+	  }
+	  #nv li{
+	     font-size: 14px;
+		 margin-right: 1px;
+		 padding-top: 0px;
+		 padding-right: 16px;
+		 padding-bottom: 0px;
+		 padding-left: 16px;
+		 height: 30px;
+		 line-height: 30px;
+		 float: left;
+		 font-weight: 700;
+		 list-style: none;
+	  }
+	  #ct .frame{
+	     padding-top: 15px;
+	  }
+	  #p1 li{
+	     clear: both;
+	     padding: 3px 0 3px 90px;
+	  }
+	  #p1 li em{
+	     float: left;
+		 margin-left: -90px;
+		 width: 85px;
+		 overflow: hidden;
+		 font-style: normal;
+	  }
+	  .mbn{
+	     margin-bottom: 5px;
+		 color: #FFF;
+	  }
+	  .wp{
+	     width: 970px;
+		 margin-top: 0px;
+		 margin-right: auto;
+		 margin-bottom: 0px;
+		 margin-left: auto;
+		 overflow: hidden;
+	  }
+	  .fw{
+	     font-weight: 400;
+	  }
+	  .fs{
+	     font-family: Arial;
+	     font-size: 0.83em;
+	  }
+	  .fs1{
+	     font-size: 12px;
+	  }
+	  .mt{
+	     margin-top: 5px;
+	  }
+	  #nv{
+	     bottom: 10px;
+		 position: absolute;
+		 left: 10px;
+		 height: auto;
+		 overflow: hidden;
+	  }
+	  .wp{
+	     width: 970px;
+		 margin-top: 0px;
+		 margin-right: auto;
+		 margin-bottom: 0px;
+		 margin-left: auto;
+		 overflow: hidden;
+	  }
+	  .area{
+	     padding-top: 0px;
+		 padding-right: 5px;
+		 padding-bottom: 0px;
+		 padding- left: 5px;
+	  }
+	  .column{
+	     overflow: column;
+	  }
+	  .block{
+	     margin-top: 0px;
+		 margin-right: 5px;
+		 margin-bottom: 10px;
+		 margin-left: 5px;
+		 border-top-color: rgb(221, 221, 221);
+		 border-top-style: solid;
+		 border-top-width: 1px;
+		 border-right-color: rgb(221, 221, 221);
+		 border-right-style: solid;
+		 border-right-width: 1px;
+		 border-bottom-color: rgb(221, 221, 221);
+		 border-bottom-style: solid;
+		 border-bottom-width: 1px;
+		 border-left-color: rgb(221, 221, 221);
+		 border-left-style: solid;
+		 border-left-width: 1px;
+		 background-color: #FFF;
+	  }
+	  .title{
+	     border-bottom-width: 1px;
+		 border-bottom-style: solid;
+		 border-bottom-color: rgb(221, 221, 221);
+		 background-color: rgb(240, 240, 240);
+		 padding-top: 0px;
+		 padding-right: 10px;
+		 padding-bottom: 0px;
+		 padding-left: 10px;
+		 font-size: 12px;
+		 font-weight: 700;
+		 line-height: 35px;
+		 height: 30px;
+		 overflow: hidden;
+	  }
+	  .db_pd{
+	     padding-top: 5px;
+		 padding-right: 10px;
+		 padding-bottom: 10px;
+		 padding-left: 10px;
+	  }
+	  .ta{
+	     text-align: center;
+	  }
+	  .mn{
+	  	float: left;
+	  	margin-bottom: 1em;
+	  	display: inline;
+	  	margin-left: 10px;
+	  	overflow: hidden;
+	  }
+	  .bm{
+	  	background-color: #FFF;
+	  	border: 1px solid #E6E7E1;
+	  	margin-bottom: 10px;
+	  	zoom: 1;
+	  }
+	  .bm_h{
+	  	padding: 0 10px;
+	  	height: 31px;
+	  	border-top: 1px solid #FFF;
+	  	border-bottom: 1px solid #ddd;
+	  	background: #f6f6f6;
+	  	line-height: 31px;
+	  	white-space: nowrap;
+	  	overflow: hidden;
+	  }
+	  .mt{
+	  	margin: 0;
+	  	padding: 0;
+	  }
+	  .bm_c{
+	  	padding: 10px;
+	  }
+      #posts{
+         margin: 0;
+         padding: 0;
+      }
+      #posts li{
+         margin: 40px 0;
+         padding: 0;
+         padding-bottom: 20px;
+         border-bottom: 1px solid #eee;
+         list-style: none;
+      }
+      #posts li:last-child{
+         border-bottom: none;
+      }
+      textarea{
+         width: 500px;
+         height: 12px;
+      }
+      input[type=text],
+      textarea{
+         border: 1px solid #eee;
+         border-top-color: #ddd;
+         border-left-color: #ddd;
+         border-radius: 2px;
+         padding: 15px;
+         font-size: .8em;
+      }
+      input[type=text]{
+         width: 500px;
+      }
+   </style>
+</head>
+<body>
+   <div id="top" class="cl">
+      <div class="z">
+         <strong id="spacename" class="mbn"><a href="index.html">Home</a></strong>
+	  </div>
+      <div class="y">
+         		 <a href="https://www.youtube.com/" style="padding-left:4px;padding-right:4px">Youtube</a>
+		 <a href="https://www.google.com.tw/" style="padding-left:4px;padding-right:4px" title="Google首頁">Google</a>
+	  </div>
+   
+   </div>
+   
+   <div id="mid" class="wp cl">
+      <div class="content" id="content">
+    	    <div class="info">
+   		       connecting server...
+   		    </div>
+       		<div class="nickform" >
+       		    
+       	    	<form action="" onSubmit="return Chat.login(); return false;">
+               		<div>
+               	    	<p id="tips">User Name:</p>
+               	    	<p>
+                       	<input type="text" autofocus="true" id="nickname">
+                       	<input type="submit"  id="nickok" value="OK">
+                   		</p>
+               		</div>
+           		</form>
+       		</div>
+   		</div>
+      <h2 id="spaceinfoshow">
+	     <strong id="spacename" class="mbn">聊天室</strong>
+		 <div>　</div>
+		 <span class="fw fs">
+		 
+		    
+		 </span>
+		 <span id="spacedescription" class="fs1	 mt fw"></span>
+	  </h2>
+	  
+   </div>
+   
+    <div id="down" class="wp ">
+    	<div class="main clearfix">
+        	<div class="chat fl">
+            	<div class="record">
+            		<div class="list clearfix"></div>
+            	</div>
+        		
+           		
+        	</div>
+			<div class="send">
+	  <div class="manager clearfix">
+            		<div class="font cc">
+                    	<div class="fontlist clearfix">
+	                    	
+							
+            	        	
+                   		</div>
+               		</div>
+                
+           		</div>
+           	    	<textarea name="" id="msg"></textarea>
+					<div class="fontcolor cc">
+    	                    	<input type="color" id="fontcolor">
+								<select id="fontsize">
+                    	        	<option value="12px">12px</option>
+                        	    	<option value="14px">14px</option>
+                                	<option value="16px">16px</option>
+                              		<option value="18px">18px</option>
+    	                        	<option value="20px" selected="true">20px</option>
+        	                    	<option value="22px">22px</option>
+        	                    	<option value="24px">24px</option>
+        	                    	<option value="28px">28px</option>
+        	                    	<option value="36px">36px</option>
+        	                    	<option value="48px">48px</option>
+            	            	</select>
+								<input type="button" class="btn" id="send" value="發送">
+        	        		</div>
+           	    	
+      </div>
+        	
+        	</div>
+			<div class="user fr">
+       	    	<div>在線人數：<span id="num">0</span></div>
+       		    <div class="list">
+       	        	<ul></ul>
+       	    	</div>
+        	</div>
+    	</div>
+    	<div class="layer"></div>
+    	
+    </div>	  
+</body>
+<script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="./js/wchat.js"></script>
+</html>

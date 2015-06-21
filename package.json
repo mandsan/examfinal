@@ -1,0 +1,19 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "main": "npm install koa koa-logger koa-route co-body co-views -- save",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "co-body": "^1.2.0",
+    "co-views": "^0.3.0",
+    "koa": "^0.20.0",
+    "koa-logger": "^1.2.2",
+    "koa-route": "^2.4.1",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {}
+}
